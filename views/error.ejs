@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Error | YouTube Downloader</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="error-body">
+
+  <div class="error-container">
+    <h1>⚠️ Oops!</h1>
+
+    <p class="error-message">
+      <%= message || "Something went wrong. Please try again." %>
+    </p>
+
+    <% if (details) { %>
+      <small class="error-details"><%= details %></small>
+    <% } %>
+
+    <a href="/" class="btn">Go Back Home</a>
+  </div>
+
+</body>
+</html>

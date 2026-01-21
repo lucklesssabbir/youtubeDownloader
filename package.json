@@ -1,0 +1,22 @@
+{
+  "name": "youtubedownloader",
+  "version": "1.0.0",
+  "description": "This project is a YouTube video downloader created with Node.js and Express. Users can paste a video link, choose a format and download videos or audio using yt-dlp",
+  "keywords": [
+    "YouTube",
+    "Video",
+    "Downloader"
+  ],
+  "license": "UNLICENSED",
+  "author": "MD Sabbir Hossen",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ejs": "^4.0.1",
+    "express": "^5.2.1"
+  }
+}

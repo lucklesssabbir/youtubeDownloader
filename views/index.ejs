@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>YouTube Downloader</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="logo">YouTube Downloader</h1>
+    <p class="subtitle">
+      Paste a YouTube video link below to download video or audio.
+    </p>
+
+    <form action="/info" method="POST" class="download-form">
+      <input
+        type="url"
+        name="url"
+        placeholder="https://www.youtube.com/watch?v=xxxx"
+        required
+      />
+
+      <button type="submit">Fetch Video</button>
+    </form>
+
+    <p class="note">
+      For educational purposes only.
+    </p>
+  </div>
+
+</body>
+</html>

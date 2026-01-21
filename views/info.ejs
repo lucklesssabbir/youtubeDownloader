@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %> | Download</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <h2 class="video-title"><%= title %></h2>
+
+    <img src="<%= thumbnail %>" alt="Thumbnail" class="thumbnail">
+
+    <form action="/download" method="POST" class="download-form">
+
+      <input type="hidden" name="url" value="<%= url %>">
+
+      <label for="format">Select format</label>
+      <select name="format" id="format" required>
+        <% formats.forEach(f => { %>
+          <option value="<%= f.format_id %>">
+            <%= f.ext %>
+            <% if (f.resolution) { %>
+              - <%= f.resolution %>
+            <% } else { %>
+              - audio
+            <% } %>
+          </option>
+        <% }) %>
+      </select>
+
+      <button type="submit">Download</button>
+    </form>
+
+    <a href="/" class="back-link">← Download another video</a>
+
+  </div>
+
+</body>
+</html>
