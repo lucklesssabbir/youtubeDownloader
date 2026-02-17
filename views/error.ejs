@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Error | YouTube Downloader</title>
+  <title>An Error Occurred</title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="error-body">
 
-  <div class="error-container">
+  <div class="error-card">
     <h1>⚠️ Oops!</h1>
 
     <p class="error-message">
-      <%= message || "Something went wrong. Please try again." %>
+      <%= message || "Something went wrong." %>
     </p>
 
     <% if (details) { %>
-      <small class="error-details"><%= details %></small>
+      <p class="error-details"><%= details %></p>
     <% } %>
 
     <a href="/" class="btn">Go Back Home</a>

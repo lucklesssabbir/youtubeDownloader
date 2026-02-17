@@ -7,6 +7,14 @@
     "Video",
     "Downloader"
   ],
+  "homepage": "https://github.com/lucklesssabbir/youtubeDownloader#readme",
+  "bugs": {
+    "url": "https://github.com/lucklesssabbir/youtubeDownloader/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucklesssabbir/youtubeDownloader.git"
+  },
   "license": "UNLICENSED",
   "author": "MD Sabbir Hossen",
   "type": "commonjs",
@@ -18,5 +26,6 @@
   "dependencies": {
     "ejs": "^4.0.1",
     "express": "^5.2.1"
-  }
+  },
+  "devDependencies": {}
 }
