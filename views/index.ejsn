@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YouTube Downloader & Media Converter |  MD Sabbir Hossen</title>
+<title>Media Toolkit</title>
 
 <link rel="stylesheet" href="/css/style.css">
-<link rel="icon" type="image/png" href="/img/favicon.png">
+
 <!-- Icons -->
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -16,35 +16,22 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
 <!-- NAVBAR -->
 <header class="navbar">
-
-  <!-- LOGO / BRAND -->
   <div class="logo">
-    <i class="fa-solid fa-play"></i> YouTube Downloader
+    <i class="fa-solid fa-play"></i> Media Toolkit
   </div>
 
-  <!-- NAV RIGHT: avatar + hamburger -->
-  <div class="nav-right">
-
-    <!-- USER AVATAR -->
-    <a href="/profile">
-      <img src="/img/default-user.png" class="nav-avatar" alt="User">
-    </a>
-
-    <!-- HAMBURGER MENU -->
-    <button class="toggle-button"  onclick="toggleMenu()">
-      <i class="fa-solid fa-bars "></i>
+  <div class="menu">
+    <button onclick="toggleMenu()">
+      <i class="fa-solid fa-bars"></i>
     </button>
 
-    <!-- DROPDOWN MENU -->
     <div id="dropdown" class="dropdown">
       <a href="/"><i class="fa-solid fa-house"></i> Home</a>
       <a href="/"><i class="fa-brands fa-youtube"></i> YouTube Downloader</a>
       <a href="/convert"><i class="fa-solid fa-gear"></i> Convert</a>
       <a href="/profile"><i class="fa-solid fa-user"></i> Profile / Sign In</a>
     </div>
-
   </div>
-
 </header>
 
 <!-- HERO -->
@@ -67,41 +54,41 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 <h2><i class="fa-solid fa-circle-info"></i> How It Works</h2>
 
 <p>
-This tool lets you download and convert online media easily from your phone. Just paste a link, choose what you want and get your file ready to save on your device
+This platform is a mobile-first media processing system designed to analyze and process publicly accessible media streams efficiently. The application combines server-side processing with browser-based controls to provide a smooth workflow from URL input to final download.
 </p>
 
-<h3>‎1. Paste Your Link</h3>
+<h3>1. URL Submission</h3>
 <p>
-‎Go to the homepage and paste the video or media link into the input box. Tap the button to continue. If the link is valid, the system will prepare everything for you automatically. 
+Users provide a valid media link through the homepage. The system validates the structure of the URL and ensures it belongs to a supported source before any processing begins.
 </p>
 
-<h3>‎2. View Media Details</h3>
+<h3>2. Metadata Extraction</h3>
 <p>
-‎You will see basic information about the media such as the title, thumbnail preview, duration and available download options. This helps you confirm you selected the correct content
+After validation, the server retrieves structured information about the media. This includes title, thumbnail, duration, available formats, and quality levels. At this stage no media file is downloaded — only information is retrieved.
 </p>
 
-<h3>‎3. Choose Format</h3>
+<h3>3. Format Selection</h3>
 <p>
-‎Select how you want to download the media. You can choose video with sound, audio only or different quality levels depending on what is available
+Users can choose a specific format such as video with audio, audio-only, or optimized formats for mobile devices. The available options depend entirely on the original media source.
 </p>
 
-<h3>‎4. Start Processing</h3>
+<h3>4. Media Processing</h3>
 <p>
-After selecting a format, the system prepares your file. This step may take a little time for large or high-quality media. 
+The server processes the selected format. This may include merging video and audio streams, converting formats, extracting audio, or optimizing playback compatibility across devices.
 </p>
 
-<h3>‎5. Download Your File</h3>
+<h3>5. Download Delivery</h3>
 <p>
-Once processing is complete, your file becomes available for download. Tap the download button and save it directly to your device. 
+After processing completes, the generated file is delivered securely to the user's device. Temporary processing data may be automatically removed to preserve system storage.
 </p>
 
-<h3>‎6. Extra Features</h3>
+<h3>6. Optional Features</h3>
 <ul>
-<li>Save your download history (when signed in)</li>
-<li>Download multiple videos from playlists</li>
-<li>Convert audio or video formats</li>
-<li>Track progress for large files</li>
-<li>Access supported private media when authorized</li>
+<li>Account-based download history</li>
+<li>Playlist batch processing</li>
+<li>Media conversion uploads</li>
+<li>Progress tracking for large media</li>
+<li>Cookie-based access for authorized private content</li>
 </ul>
 </section>
 
@@ -122,11 +109,11 @@ Once processing is complete, your file becomes available for download. Tap the d
 <h2><i class="fa-solid fa-triangle-exclamation"></i> Legal Disclaimer</h2>
 
 <p>
-This platform is provided strictly for educational, research and personal use. The system acts as a technical interface for analyzing and processing publicly accessible media streams and does not permanently host or distribute copyrighted content.
+This platform is provided strictly for educational, research, and personal use. The system acts as a technical interface for analyzing and processing publicly accessible media streams and does not permanently host or distribute copyrighted content.
 </p>
 
 <p>
-Users are solely responsible for ensuring their usage complies with applicable copyright laws, platform terms of service and local regulations. The developer does not encourage or support unauthorized downloading, redistribution or commercial use of protected content.
+Users are solely responsible for ensuring their usage complies with applicable copyright laws, platform terms of service, and local regulations. The developer does not encourage or support unauthorized downloading, redistribution, or commercial use of protected content.
 </p>
 
 <p>
@@ -169,11 +156,11 @@ Independent developer building full-stack media processing systems using mobile-
 
 <div class="links">
 <a href="https://github.com/lucklesssabbir">
-<i class="fa-brands fa-github"></i> Github
+<i class="fa-brands fa-github"></i> GitHub
 </a>
 
 <a href="https://www.linkedin.com/in/hellosabbir26">
-<i class="fa-brands fa-linkedin"></i> Linkedin
+<i class="fa-brands fa-linkedin"></i> LinkedIn
 </a>
 
 <a href="mailto:backtosabbir@gmail.com">
@@ -181,7 +168,7 @@ Independent developer building full-stack media processing systems using mobile-
 </a>
 
 <a href="https://x.com/backtosabbir">
-<i class="fa-brands fa-x-twitter"></i> 
+<i class="fa-brands fa-x-twitter"></i> X
 </a>
 
 <span><i class="fa-brands fa-discord"></i> backtosabbir</span>
@@ -189,7 +176,7 @@ Independent developer building full-stack media processing systems using mobile-
 </section>
 
 <footer>
-<p>© 2026 MD Sabbir Hossen</p>
+<p>© 2026 Sabbir Media Tools</p>
 </footer>
 
 <button id="topBtn" onclick="scrollToTop()">
