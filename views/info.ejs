@@ -1,42 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title><%= title %> | Download</title>
-  <link rel="stylesheet" href="/css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouTube Downloader & Media Converter |  MD Sabbir Hossen</title>
+
+<link rel="stylesheet" href="/css/style.css">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<!-- Icons -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
 
-  <div class="container">
+<!-- NAVBAR -->
+<header class="navbar">
 
-    <h2 class="video-title"><%= title %></h2>
+  <!-- LOGO / BRAND -->
+  <div class="logo">
+    <i class="fa-solid fa-play"></i> YouTube Downloader
+  </div>
 
-    <img src="<%= thumbnail %>" alt="Thumbnail" class="thumbnail">
+  <!-- NAV RIGHT: avatar + hamburger -->
+  <div class="nav-right">
 
-    <form action="/download" method="POST" class="download-form">
+    <!-- USER AVATAR -->
+    <a href="/profile">
+      <img src="/img/default-user.png" class="nav-avatar" alt="User">
+    </a>
 
-      <input type="hidden" name="url" value="<%= url %>">
+    <!-- HAMBURGER MENU -->
+    <button class="toggle-button"  onclick="toggleMenu()">
+      <i class="fa-solid fa-bars "></i>
+    </button>
 
-      <label for="format">Select format</label>
-      <select name="format" id="format" required>
-        <% formats.forEach(f => { %>
-          <option value="<%= f.format_id %>">
-            <%= f.ext %>
-            <% if (f.resolution) { %>
-              - <%= f.resolution %>
-            <% } else { %>
-              - audio
-            <% } %>
-          </option>
-        <% }) %>
-      </select>
-
-      <button type="submit">Download</button>
-    </form>
-
-    <a href="/" class="back-link">← Download another video</a>
+    <!-- DROPDOWN MENU -->
+    <div id="dropdown" class="dropdown">
+      <a href="/"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="/"><i class="fa-brands fa-youtube"></i> YouTube Downloader</a>
+      <a href="/convert"><i class="fa-solid fa-gear"></i> Convert</a>
+      <a href="/profile"><i class="fa-solid fa-user"></i> Profile / Sign In</a>
+    </div>
 
   </div>
 
+</header>
+
+<div class="info-container">
+
+  <!-- Main Video Card -->
+  <div class="video-card">
+    <img src="<%= video.thumbnail %>" alt="Thumbnail" class="thumbnail">
+    <h2 class="video-title"><%= video.title %></h2>
+    <p class="video-duration">Duration: <%= video.duration %> sec</p>
+  </div>
+
+  <!-- Formats Button -->
+  <div class="formats-container">
+    <button id="load-formats">Show Available Formats</button>
+
+    <!-- Format switch (hidden initially) -->
+    <div id="format-switch" style="display: none;">
+      <button class="format-btn active" data-type="video">Video</button>
+      <button class="format-btn" data-type="audio">Audio</button>
+    </div>
+
+    <!-- Formats list -->
+    <div id="formats-list" style="display: none;">
+      <!-- dynamically populated with JS -->
+    </div>
+  </div>
+
+  <!-- Loading Animation -->
+  <div id="loading-spinner" style="display: none;">
+    <div class="spinner"></div>
+    <p>Loading formats...</p>
+  </div>
+
+  <!-- Start Processing -->
+  <button id="start-processing" disabled>Start Processing</button>
+
+</div>
+
+
+<section class="section">
+<h2><i class="fa-solid fa-triangle-exclamation"></i> Legal Disclaimer</h2>
+
+<p>
+This platform is provided strictly for educational, research and personal use. The system acts as a technical interface for analyzing and processing publicly accessible media streams and does not permanently host or distribute copyrighted content.
+</p>
+
+<p>
+Users are solely responsible for ensuring their usage complies with applicable copyright laws, platform terms of service and local regulations. The developer does not encourage or support unauthorized downloading, redistribution or commercial use of protected content.
+</p>
+
+<p>
+All media processing is initiated directly by user request. The system does not bypass authentication systems or access controls unless explicitly authorized by the user through their own session data or credentials.
+</p>
+
+<p>
+Temporary files generated during processing may be automatically removed. The developer assumes no responsibility for misuse of this software or violation of third-party policies.
+</p>
+
+<p>
+By using this platform, you acknowledge and agree to these conditions.
+</p>
+</section>
+
+<!-- PRIVACY -->
+<section class="section">
+<h2><i class="fa-solid fa-shield-halved"></i> Privacy & Data Handling</h2>
+
+<ul>
+<li>No permanent storage of downloaded media</li>
+<li>Session data may be stored locally for authentication</li>
+<li>Uploaded files processed temporarily</li>
+<li>No sale or sharing of user data</li>
+<li>External platforms follow their own privacy policies</li>
+</ul>
+</section>
+
+<!-- ABOUT -->
+<section class="section about">
+<h2><i class="fa-solid fa-user"></i> About Developer</h2>
+
+<img src="/img/sabbir.jpg" class="profile-img">
+
+<p><strong>MD Sabbir Hossen</strong></p>
+
+<p>
+Independent developer building full-stack media processing systems using mobile-first development environments.
+</p>
+
+<div class="links">
+<a href="https://github.com/lucklesssabbir">
+<i class="fa-brands fa-github"></i> Github
+</a>
+
+<a href="https://www.linkedin.com/in/hellosabbir26">
+<i class="fa-brands fa-linkedin"></i> Linkedin
+</a>
+
+<a href="mailto:backtosabbir@gmail.com">
+<i class="fa-solid fa-envelope"></i> Email
+</a>
+
+<a href="https://x.com/backtosabbir">
+<i class="fa-brands fa-x-twitter"></i> 
+</a>
+
+<span><i class="fa-brands fa-discord"></i> backtosabbir</span>
+</div>
+</section>
+
+<footer>
+<p>© 2026 MD Sabbir Hossen</p>
+</footer>
+
+<button id="topBtn" onclick="scrollToTop()">
+<i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<script>
+function toggleMenu(){
+document.getElementById("dropdown").classList.toggle("show");
+}
+
+function scrollToTop(){
+window.scrollTo({ top: 0, behavior: "smooth" });
+}
+</script>
+
 </body>
-</html>?
+</html>

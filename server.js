@@ -21,14 +21,15 @@ app.use(express.static(path.join(__dirname, "public")));
 const allRoutes = require("./routes/all");
 app.use("/", allRoutes);
 
-// ERROR HANDLING
-app.get("/error", (req, res) => {
-  res.status(404).render("error", { message: "Oops! Page not found." });
-});
+
 
 // CATCH ALL OTHER ROUTES -> ERROR
 app.use((req, res) => {
-  res.redirect("/error");
+  res.status(404).render("error", {
+  errorTitle: "404 Not Found",
+  errorMessage: "The page you requested does not exist.",
+  errorType: "404"
+});
 });
 
 // START SERVER
